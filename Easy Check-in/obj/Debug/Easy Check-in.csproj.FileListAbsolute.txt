@@ -1,0 +1,23 @@
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\bin\Debug\Easy Check-in.exe.config
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\bin\Debug\Easy Check-in.exe
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\bin\Debug\Easy Check-in.pdb
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\bin\Debug\ControlzEx.dll
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\bin\Debug\MahApps.Metro.dll
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\bin\Debug\ControlzEx.pdb
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\bin\Debug\MahApps.Metro.pdb
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\bin\Debug\MahApps.Metro.xml
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\obj\Debug\Easy Check-in.csprojAssemblyReference.cache
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\obj\Debug\MainWindow.g.cs
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\obj\Debug\App.g.cs
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\obj\Debug\Easy Check-in_MarkupCompile.cache
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\obj\Debug\Easy Check-in_MarkupCompile.lref
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\obj\Debug\MainWindow.baml
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\obj\Debug\Easy Check-in.g.resources
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\obj\Debug\Easy_Check_in.Properties.Resources.resources
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\obj\Debug\Easy Check-in.csproj.GenerateResource.cache
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\obj\Debug\Easy Check-in.csproj.CopyComplete
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\obj\Debug\Easy Check-in.exe
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\obj\Debug\Easy Check-in.pdb
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\obj\Debug\App.baml
+C:\Users\rb063618\source\repos\Easy Check-in\Easy Check-in\obj\Debug\Easy Check-in_Content.g.cs
