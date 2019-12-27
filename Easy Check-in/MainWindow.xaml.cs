@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -29,136 +30,83 @@ namespace Easy_Check_in
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+
         public MainWindow()
         {
             InitializeComponent();
-            HideScriptErrors(WebViewer, true);
+            Additional.HideScriptErrors(WebViewer, true);
         }
-        public async void CheckConnect()
+
+        public async void WiFi_Connect()
         {
-            if (NetworkInterface.GetIsNetworkAvailable())
-            {
-                Captive_Tab.IsSelected = true;
-                TracUtil("hotspot_reg");
-                ReFreshPage();
+            if (NetworkInterface.GetIsNetworkAvailable()) 
+            { 
+                Additional.Connected = true;
             }
             else
             {
                 Wifi_Tab.IsSelected = true;
                 wifi_videoguide.Play();
-                WifiSettings();
-                while (!NetworkInterface.GetIsNetworkAvailable())
+                WifiSettings();                               
+                while (!Additional.Connected)
                 {
-                    await Task.Delay(3000);
+                    await Task.Run(() =>
+                    {
+                        Additional.CheckConnect();
+                    });
                 }
-                Captive_Tab.IsSelected = true;
-                TracUtil("hotspot_reg");
-                ReFreshPage();
             }
+            Captive_Portal_Auth();
         }
 
-
-        public bool IsInternetAvailable()
+        public async void Captive_Portal_Auth()
         {
-            System.Net.WebRequest ExtReq = System.Net.WebRequest.Create("https://rosbank.ru/");
-            System.Net.WebResponse ExtResp;
-            try
+            Additional.TracUtil("hotspot_reg");
+            Captive_Tab.IsSelected = true;
+            await Task.Run(() =>
             {
-                ExtReq.Timeout = 7000;
-                ExtResp = ExtReq.GetResponse();
-                ExtResp.Close();
-                ExtReq = null;
-                return true;
-            }
-            catch
-            {
-                ExtReq = null;
-                return false;
-            }
-        }
-
-        public bool NeededVPN()
-        {
-            System.Net.WebRequest IntReq = System.Net.WebRequest.Create("https://sm/");
-            System.Net.WebResponse IntResp;
-            try
-            {
-                IntReq.Timeout = 5000;
-                IntResp = IntReq.GetResponse();
-                IntResp.Close();
-                IntReq = null;
-                return true;
-            }
-            catch
-            {
-                IntReq = null;
-                return false;
-            }
-        }
-
-        public async void ReFreshPage()
-        {
-            if (IsInternetAvailable())
-            {
-                WebViewer.Visibility = Visibility.Hidden;
-                await Task.Delay(5000);
-                VPN_Tab.IsSelected = true;
-                vpn_videoguide.Play();
-                VPNStep();
-            }
+                Additional.CheckInternetConnection();
+            });
+            if (Additional.ConnectedToTheIntetnet)  {  }
             else
             {
-                WebViewer.Visibility = Visibility.Visible;
                 WebViewer.Source = new Uri("http://msftconnecttest.com/redirect");
-                while (!IsInternetAvailable())
-                {
-                    await Task.Delay(5000);
-                }
+                await Task.Delay(2000);
+                WebViewer.Visibility = Visibility.Visible;
+                while (!Additional.ConnectedToTheIntetnet)
+                    await Task.Run(() =>
+                    {
+                        Additional.CheckInternetConnection();
+                    });
                 WebViewer.Visibility = Visibility.Hidden;
-                await Task.Delay(3000);
-                VPN_Tab.IsSelected = true;
-                vpn_videoguide.Play();
-                VPNStep();
             }
+            VPN_CP_ConnectionCheck();
         }
 
-        public async void VPNStep()
+        public async void VPN_CP_ConnectionCheck()
         {
-            if (NeededVPN())
+            await Task.Run(() =>
             {
-                Connected_Tab.IsSelected = true;
-            }
+                Additional.CheckVPNConnection();
+            });
+            if (Additional.ConnectedVPN) {  }
             else
             {
-                TracUtil("connectgui");
-                while (!NeededVPN())
-                {
-                    await Task.Delay(5000);
-                }
-                Connected_Tab.IsSelected = true;
+                Additional.TracUtil("connectgui");
+                VPN_Tab.IsSelected = true;
+                vpn_videoguide.Play();
+                while (!Additional.ConnectedVPN)
+                    await Task.Run(() =>
+                    {
+                        Additional.CheckVPNConnection();
+                    });
             }
+            ConnectedToVPN();
         }
 
-        void TracUtil(string Args)
+        public void ConnectedToVPN()
         {
-            ProcessStartInfo startInfo = new ProcessStartInfo("C:\\Program Files (x86)\\CheckPoint\\Endpoint Security\\Endpoint Connect\\trac.exe");
-            startInfo.CreateNoWindow = true;
-            startInfo.UseShellExecute = false;
-            startInfo.Arguments = Args;
-            Process.Start(startInfo);
-        }
-
-        public void HideScriptErrors(WebBrowser wb, bool hide)
-        {
-            var fiComWebBrowser = typeof(WebBrowser).GetField("_axIWebBrowser2", BindingFlags.Instance | BindingFlags.NonPublic);
-            if (fiComWebBrowser == null) return;
-            var objComWebBrowser = fiComWebBrowser.GetValue(wb);
-            if (objComWebBrowser == null)
-            {
-                wb.Loaded += (o, s) => HideScriptErrors(wb, hide); //In case we are to early
-                return;
-            }
-            objComWebBrowser.GetType().InvokeMember("Silent", BindingFlags.SetProperty, null, objComWebBrowser, new object[] { hide });
+            Connected_Tab.IsSelected = true;
         }
 
         public void WifiSettings()
@@ -173,7 +121,7 @@ namespace Easy_Check_in
 
         private void Greeting_Ok_Button_Click(object sender, RoutedEventArgs e)
         {
-            CheckConnect();
+            WiFi_Connect();
         }
 
         private void Close_button_Click(object sender, RoutedEventArgs e)
