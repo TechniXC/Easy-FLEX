@@ -1,7 +1,7 @@
-﻿<Application x:Class="Easy_Check_in.App"
+﻿<Application x:Class="Easy_FLEX.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Easy_Check_in"
+             xmlns:local="clr-namespace:Easy_FLEX"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>

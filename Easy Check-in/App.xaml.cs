@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Easy_Check_in
+namespace Easy_FLEX
 {
     /// <summary>
     /// Interaction logic for App.xaml

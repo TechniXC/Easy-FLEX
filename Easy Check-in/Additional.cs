@@ -22,7 +22,7 @@ using System.ComponentModel;
 using System.Net.Sockets;
 using System.Threading;
 
-namespace Easy_Check_in
+namespace Easy_FLEX
 {
     class Additional
     {
@@ -56,23 +56,19 @@ namespace Easy_Check_in
             { ConnectedToTheIntetnet = true; }
             else
             { ConnectedToTheIntetnet = false; }
-            Thread.Sleep(3000);
         }
         public static bool IsInternetAvailable()
         {
             System.Net.WebRequest ExtReq = System.Net.WebRequest.Create("https://rosbank.ru/");
-            System.Net.WebResponse ExtResp;
+            ExtReq.Timeout = 10000;
             try
             {
-                ExtReq.Timeout = 5000;
-                ExtResp = ExtReq.GetResponse();
+                System.Net.WebResponse ExtResp = ExtReq.GetResponse();
                 ExtResp.Close();
-                ExtReq = null;
                 return true;
             }
             catch
             {
-                ExtReq = null;
                 return false;
             }
         }
@@ -81,10 +77,10 @@ namespace Easy_Check_in
         public static bool NeededVPN()
         {
             System.Net.WebRequest IntReq = System.Net.WebRequest.Create("https://sm/");
+            IntReq.Timeout = 3000;
             System.Net.WebResponse IntResp;
             try
             {
-                IntReq.Timeout = 5000;
                 IntResp = IntReq.GetResponse();
                 IntResp.Close();
                 IntReq = null;
@@ -103,7 +99,6 @@ namespace Easy_Check_in
             { ConnectedVPN = true; }
             else
             { ConnectedVPN = false; }
-            Thread.Sleep(3000);
         }
 
         public static bool Connected = false;
@@ -113,7 +108,6 @@ namespace Easy_Check_in
             { Connected = true; }
             else
             { Connected = false; }
-            Thread.Sleep(3000);
         }
     }
 }

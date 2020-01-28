@@ -23,7 +23,7 @@ using System.ComponentModel;
 using System.Net.Sockets;
 
 
-namespace Easy_Check_in
+namespace Easy_FLEX
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -61,24 +61,32 @@ namespace Easy_Check_in
 
         public async void Captive_Portal_Auth()
         {
-            Additional.TracUtil("hotspot_reg");
             Captive_Tab.IsSelected = true;
             await Task.Run(() =>
             {
-                Additional.CheckInternetConnection();
+                _ = Additional.CheckInternetConnection();
             });
             if (Additional.ConnectedToTheIntetnet)  {  }
             else
             {
-                WebViewer.Source = new Uri("http://msftconnecttest.com/redirect");
-                await Task.Delay(2000);
-                WebViewer.Visibility = Visibility.Visible;
-                while (!Additional.ConnectedToTheIntetnet)
-                    await Task.Run(() =>
-                    {
-                        Additional.CheckInternetConnection();
-                    });
-                WebViewer.Visibility = Visibility.Hidden;
+                Additional.TracUtil("hotspot_reg");
+                await Task.Delay(5000);
+                await Task.Run(() =>
+                {
+                    _ = Additional.CheckInternetConnection();
+                });
+                if (Additional.ConnectedToTheIntetnet) { }
+                else
+                {
+                    WebViewer.Source = new Uri("http://msftconnecttest.com/redirect");
+                    WebViewer.Visibility = Visibility.Visible;
+                    while (!Additional.ConnectedToTheIntetnet)
+                        await Task.Run(() =>
+                        {
+                            _ = Additional.CheckInternetConnection();
+                        });
+                    WebViewer.Visibility = Visibility.Hidden;
+                }
             }
             VPN_CP_ConnectionCheck();
         }
@@ -87,7 +95,7 @@ namespace Easy_Check_in
         {
             await Task.Run(() =>
             {
-                Additional.CheckVPNConnection();
+                _ = Additional.CheckVPNConnection();
             });
             if (Additional.ConnectedVPN) {  }
             else
@@ -98,15 +106,18 @@ namespace Easy_Check_in
                 while (!Additional.ConnectedVPN)
                     await Task.Run(() =>
                     {
-                        Additional.CheckVPNConnection();
+                        _ = Additional.CheckVPNConnection();
                     });
             }
             ConnectedToVPN();
+
         }
 
-        public void ConnectedToVPN()
+        public async void ConnectedToVPN()
         {
             Connected_Tab.IsSelected = true;
+            await Task.Delay(20000);
+            Easy_FLEX_MainWindow.Close();
         }
 
         public void WifiSettings()
@@ -116,12 +127,18 @@ namespace Easy_Check_in
 
         private void Options_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Here will be additional options!");
+            MessageBox.Show("Easy FLEX™\nVersion: Alpha\nAuthor: Nikita Letov (GTS\\SEC)\nCopiright © 2020 All rights reserved");
         }
 
-        private void Greeting_Ok_Button_Click(object sender, RoutedEventArgs e)
+        private async void Greeting_Ok_Button_Click(object sender, RoutedEventArgs e)
         {
-            WiFi_Connect();
+            First_check_bar.Visibility = Visibility.Visible;
+            await Task.Run(() =>
+            {
+                _ = Additional.CheckVPNConnection();
+            });
+            if (Additional.ConnectedVPN) { ConnectedToVPN(); }
+            else { WiFi_Connect(); }
         }
 
         private void Close_button_Click(object sender, RoutedEventArgs e)
@@ -142,6 +159,12 @@ namespace Easy_Check_in
         {
             vpn_videoguide.Stop();
             vpn_videoguide.Play();
+        }
+
+        private void restart_vpn_button_Click(object sender, RoutedEventArgs e)
+        {
+            Additional.TracUtil("hotspot_reg");
+            Additional.TracUtil("connectgui");
         }
     }
 }
