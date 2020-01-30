@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,11 +21,10 @@ using System.Reflection;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Net.Sockets;
-using System.Threading;
 
 namespace Easy_FLEX
 {
-    class Additional
+    public class Additional : MetroWindow
     {
         public static void HideScriptErrors(WebBrowser wb, bool hide)
         {
@@ -45,7 +45,13 @@ namespace Easy_FLEX
             startInfo.CreateNoWindow = true;
             startInfo.UseShellExecute = false;
             startInfo.Arguments = Args;
-            Process.Start(startInfo);
+            try
+            { Process.Start(startInfo); }
+            catch
+            {
+                MessageBox.Show("There are no CheckPoint VPN Software on your PC.\nPlease ask your technical support for sulution\nTool will be closed...");
+                Environment.Exit(1);
+            }
         }
 
         public static bool ConnectedToTheIntetnet = false;
@@ -104,10 +110,14 @@ namespace Easy_FLEX
         public static bool Connected = false;
         public async static Task CheckConnect()
         {
-            if (NetworkInterface.GetIsNetworkAvailable())
-            { Connected = true; }
-            else
-            { Connected = false; }
+            while (true)
+            {
+                if (NetworkInterface.GetIsNetworkAvailable())
+                { Connected = true; }
+                else
+                { Connected = false; }
+                await Task.Delay(2000);
+            }
         }
     }
 }

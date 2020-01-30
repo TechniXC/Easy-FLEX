@@ -37,6 +37,16 @@ namespace Easy_FLEX
             Additional.HideScriptErrors(WebViewer, true);
         }
 
+        public async void Step_Back()
+        {
+            while (Additional.Connected)
+            {
+                await Task.Delay(2000);
+            }
+            MessageBox.Show("There are troubles with Network connection.\nWe have to start again.\nSorry...");
+            Greeting_Tab.IsSelected = true;
+        }
+
         public async void WiFi_Connect()
         {
             if (NetworkInterface.GetIsNetworkAvailable()) 
@@ -47,16 +57,21 @@ namespace Easy_FLEX
             {
                 Wifi_Tab.IsSelected = true;
                 wifi_videoguide.Play();
-                WifiSettings();                               
+                WifiSettings();
+                await Task.Run(() =>
+                {
+                    Additional.CheckConnect();
+                });
                 while (!Additional.Connected)
                 {
-                    await Task.Run(() =>
-                    {
-                        Additional.CheckConnect();
-                    });
+                    await Task.Delay(2000);
                 }
             }
             Captive_Portal_Auth();
+            await Task.Run(() =>
+            {
+                Step_Back();
+            });
         }
 
         public async void Captive_Portal_Auth()
@@ -143,7 +158,7 @@ namespace Easy_FLEX
 
         private void Close_button_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            Easy_FLEX_MainWindow.Close();
         }
 
         private void repeat_wifi_button_Click(object sender, RoutedEventArgs e)

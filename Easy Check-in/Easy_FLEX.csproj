@@ -59,7 +59,7 @@
     <ApplicationIcon>resources\Easy_FLEX.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -145,7 +145,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Easy_FLEX_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -185,12 +184,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\homer_Connected.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="rosbank_logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="rusfinance_logo.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\RB_logo.png" />
