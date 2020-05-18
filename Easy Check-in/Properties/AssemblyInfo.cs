@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Easy Check-in")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Easy FLEX™")]
+[assembly: AssemblyDescription("This tool will help you to establish a connection to Societe Generale RUSSIA internal network.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Easy Check-in")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyProduct("Easy FLEX™")]
+[assembly: AssemblyCopyright("Copiright © 2020 Nikita Letov All rights reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -51,5 +51,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.0.76")]
+[assembly: AssemblyFileVersion("1.0.0.76")]

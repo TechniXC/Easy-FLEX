@@ -118,91 +118,105 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CaptiveLabel" xml:space="preserve">
-    <value />
+    <value>If there is no one, we send you to the next step.</value>
   </data>
   <data name="CaptiveLabelBar" xml:space="preserve">
-    <value />
+    <value>Additional Provider authorization</value>
   </data>
   <data name="CaptiveLabelHeader" xml:space="preserve">
-    <value />
+    <value>Authorization portal searching...</value>
   </data>
   <data name="CaptiveTab" xml:space="preserve">
-    <value />
+    <value>Step 3/5</value>
   </data>
   <data name="CloseButton" xml:space="preserve">
-    <value />
+    <value>close</value>
   </data>
   <data name="ConnectedLabel" xml:space="preserve">
-    <value />
+    <value>Everything is ready to start work. 
+
+This window can be closed by pressing button below or it will close automatically in 20 seconds.</value>
   </data>
   <data name="ConnectedLabelBar" xml:space="preserve">
-    <value />
+    <value>Connection Established.</value>
   </data>
   <data name="ConnectedLabelHeader" xml:space="preserve">
-    <value />
+    <value>Connection Established.</value>
   </data>
   <data name="ConnectedTab" xml:space="preserve">
-    <value />
+    <value>Step 5/5</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Easy_FLEX" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\Easy_FLEX.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GreetingLabel" xml:space="preserve">
-    <value />
+    <value>This tool will help you to establish a connection to Societe Generale RUSSIA internal network.
+
+Press the button below to start.</value>
   </data>
   <data name="GreetingLabelBar" xml:space="preserve">
-    <value />
+    <value>Welcome Onboard!</value>
   </data>
   <data name="GreetingLabelHeader" xml:space="preserve">
-    <value />
+    <value>Welcome to 
+Easy FLEX!</value>
   </data>
   <data name="GreetingTab" xml:space="preserve">
-    <value />
+    <value>Step 1/5</value>
   </data>
   <data name="GTS_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\GTS_Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NoCPSoft" xml:space="preserve">
-    <value />
+    <value>There are no CheckPoint VPN Software on your PC. 
+Please ask your technical support for sulution. 
+Tool will be closed...</value>
   </data>
   <data name="NtwTrouble" xml:space="preserve">
-    <value />
+    <value>There are troubles with Network connection. 
+We have to start again. 
+Sorry...</value>
   </data>
   <data name="RepeatVPNButton" xml:space="preserve">
-    <value />
+    <value>repeat guide</value>
   </data>
   <data name="RepeatWifiButton" xml:space="preserve">
-    <value />
+    <value>repeat guide</value>
   </data>
   <data name="RestartVPNButton" xml:space="preserve">
-    <value />
+    <value>     restart vpn
+(in case of trouble)</value>
   </data>
   <data name="StartButton" xml:space="preserve">
-    <value />
+    <value>let's start</value>
   </data>
   <data name="VPNLabel" xml:space="preserve">
-    <value />
+    <value>Now your Laptop is connected to Wi-Fi with internet. Please log in with Check Point interface using your  account and SafeNet MobilePass according to the video guide.
+ 
+Check Point UI will appear in a moment.</value>
   </data>
   <data name="VPNLabelBar" xml:space="preserve">
-    <value />
+    <value>Establishing encrypted VPN tunnel</value>
   </data>
   <data name="VPNLabelHeader" xml:space="preserve">
-    <value />
+    <value>Establishing encrypted VPN tunnel</value>
   </data>
   <data name="VPNTab" xml:space="preserve">
-    <value />
+    <value>Step 4/5</value>
   </data>
   <data name="WiFiLabel" xml:space="preserve">
-    <value />
+    <value>Your Laptop is not connected to any Network.. Please connect to Wi-Fi to get Internet access according to the video Guide. 
+
+It is important to establish VPN.</value>
   </data>
   <data name="WiFiLabelBar" xml:space="preserve">
-    <value />
+    <value>Checking Network Connection</value>
   </data>
   <data name="WiFiLabelHeader" xml:space="preserve">
-    <value />
+    <value>Checking Wi-Fi Connection</value>
   </data>
   <data name="WiFiTab" xml:space="preserve">
-    <value />
+    <value>Step 2/5</value>
   </data>
 </root>

@@ -49,7 +49,7 @@ namespace Easy_FLEX
             { Process.Start(startInfo); }
             catch
             {
-                MessageBox.Show("There are no CheckPoint VPN Software on your PC.\nPlease ask your technical support for sulution\nTool will be closed...");
+                MessageBox.Show(Properties.Resources.NoCPSoft);
                 Environment.Exit(1);
             }
         }
@@ -58,12 +58,12 @@ namespace Easy_FLEX
 
         public async static Task CheckInternetConnection()
         {
-            if (IsInternetAvailable())
+            if (IsInternetAvailableTcp())
             { ConnectedToTheIntetnet = true; }
             else
             { ConnectedToTheIntetnet = false; }
         }
-        public static bool IsInternetAvailable()
+        /*public static bool IsInternetAvailable()
         {
             System.Net.WebRequest ExtReq = System.Net.WebRequest.Create("https://rosbank.ru/");
             ExtReq.Timeout = 10000;
@@ -77,7 +77,7 @@ namespace Easy_FLEX
             {
                 return false;
             }
-        }
+        }*/
 
         public static bool ConnectedVPN = false;
         public static bool NeededVPN()
@@ -117,6 +117,24 @@ namespace Easy_FLEX
                 else
                 { Connected = false; }
                 await Task.Delay(2000);
+            }
+        }
+
+        public static bool IsInternetAvailableTcp()
+        {
+                try
+                {
+                    using (var client = new TcpClient())
+                    {
+                        var result = client.BeginConnect("fo.rosbank.ru", 443, null, null);
+                        var success = result.AsyncWaitHandle.WaitOne(10);
+                        client.EndConnect(result);
+                        return true;
+                    }
+                }
+                catch
+                {
+                    return false;
             }
         }
     }

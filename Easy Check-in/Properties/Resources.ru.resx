@@ -118,91 +118,106 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CaptiveLabel" xml:space="preserve">
-    <value />
+    <value>Если авторизация не требуется, мы перенаправим вас на следующий шаг.</value>
   </data>
   <data name="CaptiveLabelBar" xml:space="preserve">
-    <value />
+    <value>Автризация на портале провайдера</value>
   </data>
   <data name="CaptiveLabelHeader" xml:space="preserve">
-    <value />
+    <value>Поиск портала авторизации...</value>
   </data>
   <data name="CaptiveTab" xml:space="preserve">
-    <value />
+    <value>Шаг 3/5</value>
   </data>
   <data name="CloseButton" xml:space="preserve">
-    <value />
+    <value>закрыть</value>
   </data>
   <data name="ConnectedLabel" xml:space="preserve">
-    <value />
+    <value>Все готово для начала работы. 
+
+Вы можете закрыть окно кнопкой, или оно закроется автоматически через 20 секунд.</value>
   </data>
   <data name="ConnectedLabelBar" xml:space="preserve">
-    <value />
+    <value>Подключение установлено</value>
   </data>
   <data name="ConnectedLabelHeader" xml:space="preserve">
-    <value />
+    <value>Подключение установлено</value>
   </data>
   <data name="ConnectedTab" xml:space="preserve">
-    <value />
+    <value>Шаг 5/5</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Easy_FLEX" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\Easy_FLEX.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GreetingLabel" xml:space="preserve">
-    <value />
+    <value>Данная программы поможет вам подключиться к Сети Societe Generale RUSSIA.
+
+Нажмите на кнопку внизу, что бы начать.</value>
   </data>
   <data name="GreetingLabelBar" xml:space="preserve">
-    <value />
+    <value>Добро пожаловать!</value>
   </data>
   <data name="GreetingLabelHeader" xml:space="preserve">
-    <value />
+    <value>Добро пожаловать в Easy FLEX!</value>
   </data>
   <data name="GreetingTab" xml:space="preserve">
-    <value />
+    <value>Шаг 1/5</value>
   </data>
   <data name="GTS_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\GTS_Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NoCPSoft" xml:space="preserve">
-    <value />
+    <value>К сожалению на вашем ПК не установлен CheckPoint VPN. 
+Обратитесь в тех.поддержку за решением данной проблемы. 
+Программа будет закрыта...</value>
   </data>
   <data name="NtwTrouble" xml:space="preserve">
-    <value />
+    <value>Возникли проблемы с сетью. Возможно вы отключились от WiFi
+Мы начнем сначала. 
+Извините...</value>
   </data>
   <data name="RepeatVPNButton" xml:space="preserve">
-    <value />
+    <value>повторить видео</value>
   </data>
   <data name="RepeatWifiButton" xml:space="preserve">
-    <value />
+    <value>повторить видео</value>
   </data>
   <data name="RestartVPNButton" xml:space="preserve">
-    <value />
+    <value>  перезапуск VPN
+(в случае проблем)</value>
   </data>
   <data name="StartButton" xml:space="preserve">
-    <value />
+    <value>начать</value>
   </data>
   <data name="VPNLabel" xml:space="preserve">
-    <value />
+    <value>Сейчас вы подключены к Интернет. Авторизуйтесь в интерфейсе Check Point, используя  ваш аккаунт и SafeNet MobilePass, следуя видеоинструкции.
+
+Интерфейс CP Скоро появится.</value>
   </data>
   <data name="VPNLabelBar" xml:space="preserve">
-    <value />
+    <value>Установление шифрованного VPN туннеля</value>
   </data>
   <data name="VPNLabelHeader" xml:space="preserve">
-    <value />
+    <value>Установление шифрованного VPN туннеля</value>
   </data>
   <data name="VPNTab" xml:space="preserve">
-    <value />
+    <value>Шаг 4/5</value>
   </data>
   <data name="WiFiLabel" xml:space="preserve">
-    <value />
+    <value>Ваш ноутбук не подключен к сети..
+Пожалуйста, выберите Wi-Fi сеть, следуя
+видеоинструкции.
+
+Это необходимо для установления VPN соединения.</value>
   </data>
   <data name="WiFiLabelBar" xml:space="preserve">
-    <value />
+    <value>Проверка подключения к Wi-Fi сети</value>
   </data>
   <data name="WiFiLabelHeader" xml:space="preserve">
-    <value />
+    <value>Проверка подключения к Wi-Fi</value>
   </data>
   <data name="WiFiTab" xml:space="preserve">
-    <value />
+    <value>Шаг 2/5</value>
   </data>
 </root>
